@@ -1,0 +1,125 @@
+{
+  "social_conversations": [
+    {
+      "title": "Meeting Someone New",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "person1", "spanish": "¡Hola! ¿Cómo te llamas?", "english": "Hi! What's your name?"},
+        {"speaker": "person2", "spanish": "Me llamo Ana. ¿Y tú?", "english": "My name is Ana. And you?"},
+        {"speaker": "person1", "spanish": "Soy Carlos. Mucho gusto.", "english": "I'm Carlos. Nice to meet you."},
+        {"speaker": "person2", "spanish": "Igualmente. ¿De dónde eres?", "english": "Likewise. Where are you from?"},
+        {"speaker": "person1", "spanish": "Soy de Estados Unidos. ¿Y tú?", "english": "I'm from the United States. And you?"},
+        {"speaker": "person2", "spanish": "Soy de aquí, de Madrid.", "english": "I'm from here, from Madrid."},
+        {"speaker": "person1", "spanish": "¡Qué interesante! ¿Tienes tiempo para tomar un café?", "english": "How interesting! Do you have time for a coffee?"},
+        {"speaker": "person2", "spanish": "Sí, claro. Vamos.", "english": "Yes, of course. Let's go."}
+      ],
+      "vocabulary": ["llamas", "igualmente", "de dónde", "interesante", "café"],
+      "tips": "Use 'Mucho gusto' when meeting someone. 'Igualmente' means 'likewise'."
+    },
+    {
+      "title": "Small Talk About Weather",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "person1", "spanish": "¡Qué día tan bonito!", "english": "What a beautiful day!"},
+        {"speaker": "person2", "spanish": "Sí, hace muy buen tiempo.", "english": "Yes, the weather is very nice."},
+        {"speaker": "person1", "spanish": "¿Siempre hace tanto sol aquí?", "english": "Is it always so sunny here?"},
+        {"speaker": "person2", "spanish": "En verano, sí. Pero en invierno llueve mucho.", "english": "In summer, yes. But in winter it rains a lot."},
+        {"speaker": "person1", "spanish": "Me encanta el sol.", "english": "I love the sun."},
+        {"speaker": "person2", "spanish": "A mí también. ¿Te gusta la playa?", "english": "Me too. Do you like the beach?"},
+        {"speaker": "person1", "spanish": "Sí, me encanta nadar.", "english": "Yes, I love to swim."}
+      ],
+      "vocabulary": ["bonito", "tiempo", "sol", "verano", "invierno", "llueve", "playa", "nadar"],
+      "tips": "'Hace buen tiempo' = nice weather. 'Hace mal tiempo' = bad weather."
+    },
+    {
+      "title": "Talking About Hobbies",
+      "difficulty": "intermediate",
+      "dialogue": [
+        {"speaker": "person1", "spanish": "¿Qué te gusta hacer en tu tiempo libre?", "english": "What do you like to do in your free time?"},
+        {"speaker": "person2", "spanish": "Me gusta leer y ver películas. ¿Y a ti?", "english": "I like to read and watch movies. And you?"},
+        {"speaker": "person1", "spanish": "Me encanta jugar al fútbol y tocar la guitarra.", "english": "I love to play soccer and play the guitar."},
+        {"speaker": "person2", "spanish": "¡Qué genial! ¿Tocas en una banda?", "english": "How cool! Do you play in a band?"},
+        {"speaker": "person1", "spanish": "No, solo por diversión. ¿Qué tipo de películas te gustan?", "english": "No, just for fun. What kind of movies do you like?"},
+        {"speaker": "person2", "spanish": "Me gustan las comedias y las películas de acción.", "english": "I like comedies and action movies."},
+        {"speaker": "person1", "spanish": "A mí también. Deberíamos ir al cine algún día.", "english": "Me too. We should go to the movies someday."},
+        {"speaker": "person2", "spanish": "¡Sí, me encantaría!", "english": "Yes, I'd love to!"}
+      ],
+      "vocabulary": ["tiempo libre", "leer", "películas", "tocar", "guitarra", "banda", "diversión", "comedias", "cine"],
+      "tips": "Use 'me gusta' + infinitive verb for activities you like."
+    },
+    {
+      "title": "Making Plans with Friends",
+      "difficulty": "intermediate",
+      "dialogue": [
+        {"speaker": "friend1", "spanish": "¿Qué planes tienes para el fin de semana?", "english": "What plans do you have for the weekend?"},
+        {"speaker": "friend2", "spanish": "Todavía no tengo planes. ¿Por qué?", "english": "I don't have plans yet. Why?"},
+        {"speaker": "friend1", "spanish": "¿Quieres ir a la playa el sábado?", "english": "Do you want to go to the beach on Saturday?"},
+        {"speaker": "friend2", "spanish": "¡Sí! ¿A qué hora?", "english": "Yes! What time?"},
+        {"speaker": "friend1", "spanish": "¿Te parece bien a las diez de la mañana?", "english": "Is ten in the morning okay with you?"},
+        {"speaker": "friend2", "spanish": "Perfecto. ¿Dónde nos encontramos?", "english": "Perfect. Where should we meet?"},
+        {"speaker": "friend1", "spanish": "En la estación de metro. ¿Te viene bien?", "english": "At the metro station. Does that work for you?"},
+        {"speaker": "friend2", "spanish": "Sí, perfecto. Nos vemos el sábado.", "english": "Yes, perfect. See you Saturday."},
+        {"speaker": "friend1", "spanish": "¡Hasta el sábado!", "english": "See you Saturday!"}
+      ],
+      "vocabulary": ["planes", "fin de semana", "sábado", "encontramos", "estación", "metro", "te viene bien"],
+      "tips": "'¿Te parece bien?' = Does that seem good to you? Use for making suggestions."
+    },
+    {
+      "title": "At a Party - Mingling",
+      "difficulty": "intermediate",
+      "dialogue": [
+        {"speaker": "host", "spanish": "¡Bienvenidos! Pasen, por favor.", "english": "Welcome! Come in, please."},
+        {"speaker": "guest", "spanish": "Gracias por invitarnos. Esta es mi amiga Laura.", "english": "Thanks for inviting us. This is my friend Laura."},
+        {"speaker": "host", "spanish": "Mucho gusto, Laura. La comida está en la cocina.", "english": "Nice to meet you, Laura. The food is in the kitchen."},
+        {"speaker": "guest", "spanish": "¿Conoces a mucha gente aquí?", "english": "Do you know many people here?"},
+        {"speaker": "laura", "spanish": "No, es mi primera vez. ¿Y tú?", "english": "No, it's my first time. And you?"},
+        {"speaker": "guest", "spanish": "Conozco al anfitrión del trabajo.", "english": "I know the host from work."},
+        {"speaker": "laura", "spanish": "Ah, entiendo. La música está muy bien.", "english": "Ah, I understand. The music is very good."},
+        {"speaker": "guest", "spanish": "Sí, ¿quieres algo de beber?", "english": "Yes, do you want something to drink?"},
+        {"speaker": "laura", "spanish": "Sí, gracias. Vamos.", "english": "Yes, thanks. Let's go."}
+      ],
+      "vocabulary": ["bienvenidos", "pasen", "invitarnos", "cocina", "gente", "anfitrión", "música", "beber"],
+      "tips": "Social phrases: 'Pasen' (Come in), 'Bienvenidos' (Welcome), 'Mucho gusto' (Nice to meet you)."
+    },
+    {
+      "title": "Asking About Someone's Day",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "person1", "spanish": "Hola, ¿cómo estuvo tu día?", "english": "Hi, how was your day?"},
+        {"speaker": "person2", "spanish": "Bien, gracias. Un poco cansado. ¿Y el tuyo?", "english": "Good, thanks. A bit tired. And yours?"},
+        {"speaker": "person1", "spanish": "Muy ocupado. Tuve mucho trabajo.", "english": "Very busy. I had a lot of work."},
+        {"speaker": "person2", "spanish": "Lo imagino. ¿Quieres descansar un poco?", "english": "I can imagine. Do you want to rest a bit?"},
+        {"speaker": "person1", "spanish": "Sí, buena idea. ¿Tomamos algo?", "english": "Yes, good idea. Shall we have something?"},
+        {"speaker": "person2", "spanish": "Claro, vamos a tomar un café.", "english": "Sure, let's have a coffee."}
+      ],
+      "vocabulary": ["estuvo", "cansado", "ocupado", "trabajo", "imagino", "descansar"],
+      "tips": "'¿Cómo estuvo?' is past tense. '¿Cómo está?' is present tense."
+    }
+  ],
+  "social_expressions": {
+    "greetings_informal": [
+      {"spanish": "¿Qué tal?", "english": "What's up?/How's it going?", "formality": "informal"},
+      {"spanish": "¿Cómo andas?", "english": "How are you doing?", "formality": "informal"},
+      {"spanish": "¿Qué hay de nuevo?", "english": "What's new?", "formality": "informal"}
+    ],
+    "agreement": [
+      {"spanish": "Totalmente", "english": "Totally"},
+      {"spanish": "Exacto", "english": "Exactly"},
+      {"spanish": "Tienes razón", "english": "You're right"},
+      {"spanish": "Estoy de acuerdo", "english": "I agree"}
+    ],
+    "surprise": [
+      {"spanish": "¡No me digas!", "english": "No way!/You don't say!"},
+      {"spanish": "¡Qué sorpresa!", "english": "What a surprise!"},
+      {"spanish": "¡En serio?", "english": "Really?/Seriously?"},
+      {"spanish": "¡No puedo creerlo!", "english": "I can't believe it!"}
+    ],
+    "encouragement": [
+      {"spanish": "¡Ánimo!", "english": "Cheer up!/Come on!"},
+      {"spanish": "¡Tú puedes!", "english": "You can do it!"},
+      {"spanish": "¡Bien hecho!", "english": "Well done!"},
+      {"spanish": "¡Excelente!", "english": "Excellent!"}
+    ]
+  }
+}
+

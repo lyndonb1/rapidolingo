@@ -1,0 +1,222 @@
+{
+  "beginner_phrases": [
+    {
+      "spanish": "Hola, ¿cómo estás?",
+      "english": "Hello, how are you?",
+      "pronunciation": "OH-lah, KOH-moh es-TAHS",
+      "category": "greetings",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Buenos días",
+      "english": "Good morning",
+      "pronunciation": "BWEH-nos DEE-ahs",
+      "category": "greetings",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Buenas tardes",
+      "english": "Good afternoon",
+      "pronunciation": "BWEH-nas TAR-des",
+      "category": "greetings",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Buenas noches",
+      "english": "Good evening/night",
+      "pronunciation": "BWEH-nas NOH-ches",
+      "category": "greetings",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Cómo te llamas?",
+      "english": "What's your name?",
+      "pronunciation": "KOH-moh teh YAH-mas",
+      "category": "introductions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Me llamo...",
+      "english": "My name is...",
+      "pronunciation": "meh YAH-moh",
+      "category": "introductions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Mucho gusto",
+      "english": "Nice to meet you",
+      "pronunciation": "MOO-choh GOOS-toh",
+      "category": "introductions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Por favor",
+      "english": "Please",
+      "pronunciation": "por fah-VOR",
+      "category": "polite_expressions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Gracias",
+      "english": "Thank you",
+      "pronunciation": "GRAH-see-ahs",
+      "category": "polite_expressions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "De nada",
+      "english": "You're welcome",
+      "pronunciation": "deh NAH-dah",
+      "category": "polite_expressions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Lo siento",
+      "english": "I'm sorry",
+      "pronunciation": "loh see-EN-toh",
+      "category": "polite_expressions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Perdón",
+      "english": "Excuse me/Pardon",
+      "pronunciation": "pehr-DOHN",
+      "category": "polite_expressions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Hablas inglés?",
+      "english": "Do you speak English?",
+      "pronunciation": "AH-blas een-GLES",
+      "category": "questions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "No entiendo",
+      "english": "I don't understand",
+      "pronunciation": "noh en-tee-EN-doh",
+      "category": "questions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Puedes repetir?",
+      "english": "Can you repeat?",
+      "pronunciation": "PWEH-des reh-peh-TEER",
+      "category": "questions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Más despacio, por favor",
+      "english": "Slower, please",
+      "pronunciation": "mahs des-PAH-see-oh",
+      "category": "questions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Sí",
+      "english": "Yes",
+      "pronunciation": "see",
+      "category": "responses",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "No",
+      "english": "No",
+      "pronunciation": "noh",
+      "category": "responses",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Quizás",
+      "english": "Maybe",
+      "pronunciation": "kee-SAHS",
+      "category": "responses",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Dónde está...?",
+      "english": "Where is...?",
+      "pronunciation": "DOHN-deh es-TAH",
+      "category": "directions",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Cuánto cuesta?",
+      "english": "How much does it cost?",
+      "pronunciation": "KWAHN-toh KWES-tah",
+      "category": "shopping",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Agua",
+      "english": "Water",
+      "pronunciation": "AH-gwah",
+      "category": "food",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "La cuenta, por favor",
+      "english": "The check, please",
+      "pronunciation": "lah KWEN-tah",
+      "category": "restaurant",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Qué recomiendas?",
+      "english": "What do you recommend?",
+      "pronunciation": "keh reh-koh-mee-EN-das",
+      "category": "restaurant",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Una mesa para dos",
+      "english": "A table for two",
+      "pronunciation": "OO-nah MEH-sah PAH-rah dos",
+      "category": "restaurant",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Adiós",
+      "english": "Goodbye",
+      "pronunciation": "ah-dee-OHS",
+      "category": "farewells",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Hasta luego",
+      "english": "See you later",
+      "pronunciation": "AHS-tah LWEH-goh",
+      "category": "farewells",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Hasta mañana",
+      "english": "See you tomorrow",
+      "pronunciation": "AHS-tah mahn-YAH-nah",
+      "category": "farewells",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "¿Dónde está el baño?",
+      "english": "Where is the bathroom?",
+      "pronunciation": "DOHN-deh es-TAH el BAHN-yoh",
+      "category": "essential",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Ayuda",
+      "english": "Help",
+      "pronunciation": "ah-YOO-dah",
+      "category": "emergency",
+      "difficulty": "beginner"
+    },
+    {
+      "spanish": "Necesito un médico",
+      "english": "I need a doctor",
+      "pronunciation": "neh-seh-SEE-toh oon MEH-dee-koh",
+      "category": "emergency",
+      "difficulty": "beginner"
+    }
+  ]
+}
+

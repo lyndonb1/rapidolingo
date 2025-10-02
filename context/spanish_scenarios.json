@@ -1,0 +1,89 @@
+{
+  "scenarios": [
+    {
+      "title": "Ordering at a Restaurant",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "waiter", "spanish": "Buenas tardes. ¿Qué desea?", "english": "Good afternoon. What would you like?"},
+        {"speaker": "customer", "spanish": "Una mesa para dos, por favor.", "english": "A table for two, please."},
+        {"speaker": "waiter", "spanish": "Claro, síganme por favor.", "english": "Of course, follow me please."},
+        {"speaker": "customer", "spanish": "¿Qué recomienda?", "english": "What do you recommend?"},
+        {"speaker": "waiter", "spanish": "La paella es muy popular.", "english": "The paella is very popular."},
+        {"speaker": "customer", "spanish": "Perfecto. Dos paellas, por favor.", "english": "Perfect. Two paellas, please."},
+        {"speaker": "customer", "spanish": "Y dos aguas también.", "english": "And two waters as well."},
+        {"speaker": "waiter", "spanish": "Muy bien. ¿Algo más?", "english": "Very good. Anything else?"},
+        {"speaker": "customer", "spanish": "No, eso es todo. Gracias.", "english": "No, that's all. Thank you."},
+        {"speaker": "customer", "spanish": "La cuenta, por favor.", "english": "The check, please."}
+      ],
+      "vocabulary": ["mesa", "por favor", "desea", "recomienda", "paella", "agua", "cuenta"],
+      "tips": "Always use 'por favor' to be polite. 'La cuenta' means the check/bill."
+    },
+    {
+      "title": "At the Airport",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "agent", "spanish": "Buenos días. Su pasaporte, por favor.", "english": "Good morning. Your passport, please."},
+        {"speaker": "traveler", "spanish": "Aquí está.", "english": "Here it is."},
+        {"speaker": "agent", "spanish": "¿Dónde está su equipaje?", "english": "Where is your luggage?"},
+        {"speaker": "traveler", "spanish": "Tengo una maleta.", "english": "I have one suitcase."},
+        {"speaker": "agent", "spanish": "Perfecto. Su tarjeta de embarque.", "english": "Perfect. Your boarding pass."},
+        {"speaker": "traveler", "spanish": "¿Cuál es la puerta?", "english": "Which is the gate?"},
+        {"speaker": "agent", "spanish": "Puerta número doce.", "english": "Gate number twelve."},
+        {"speaker": "traveler", "spanish": "Muchas gracias.", "english": "Thank you very much."}
+      ],
+      "vocabulary": ["pasaporte", "equipaje", "maleta", "tarjeta de embarque", "puerta"],
+      "tips": "Keep your pasaporte (passport) ready. Know your puerta (gate) number."
+    },
+    {
+      "title": "Checking into a Hotel",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "receptionist", "spanish": "Bienvenido. ¿Tiene una reserva?", "english": "Welcome. Do you have a reservation?"},
+        {"speaker": "guest", "spanish": "Sí, a nombre de Smith.", "english": "Yes, under the name Smith."},
+        {"speaker": "receptionist", "spanish": "Perfecto. Habitación doscientos tres.", "english": "Perfect. Room two hundred three."},
+        {"speaker": "guest", "spanish": "¿A qué hora es el desayuno?", "english": "What time is breakfast?"},
+        {"speaker": "receptionist", "spanish": "De siete a diez de la mañana.", "english": "From seven to ten in the morning."},
+        {"speaker": "guest", "spanish": "¿Dónde está el ascensor?", "english": "Where is the elevator?"},
+        {"speaker": "receptionist", "spanish": "A la derecha, por favor.", "english": "To the right, please."},
+        {"speaker": "guest", "spanish": "Muchas gracias.", "english": "Thank you very much."}
+      ],
+      "vocabulary": ["reserva", "habitación", "desayuno", "ascensor", "derecha"],
+      "tips": "Know your habitación (room) number. 'A nombre de' means 'under the name of'."
+    },
+    {
+      "title": "Shopping at a Store",
+      "difficulty": "intermediate",
+      "dialogue": [
+        {"speaker": "clerk", "spanish": "Hola, ¿en qué puedo ayudarle?", "english": "Hello, how can I help you?"},
+        {"speaker": "customer", "spanish": "Busco una camiseta.", "english": "I'm looking for a t-shirt."},
+        {"speaker": "clerk", "spanish": "¿Qué talla necesita?", "english": "What size do you need?"},
+        {"speaker": "customer", "spanish": "Mediana, por favor.", "english": "Medium, please."},
+        {"speaker": "clerk", "spanish": "¿Le gusta este color?", "english": "Do you like this color?"},
+        {"speaker": "customer", "spanish": "Sí, me gusta. ¿Cuánto cuesta?", "english": "Yes, I like it. How much does it cost?"},
+        {"speaker": "clerk", "spanish": "Veinte euros.", "english": "Twenty euros."},
+        {"speaker": "customer", "spanish": "Perfecto. La llevo.", "english": "Perfect. I'll take it."},
+        {"speaker": "clerk", "spanish": "¿Paga con tarjeta o efectivo?", "english": "Are you paying by card or cash?"},
+        {"speaker": "customer", "spanish": "Con tarjeta, por favor.", "english": "By card, please."}
+      ],
+      "vocabulary": ["camiseta", "talla", "mediana", "color", "euros", "tarjeta", "efectivo"],
+      "tips": "Tallas: pequeña (small), mediana (medium), grande (large). Know basic colors and numbers."
+    },
+    {
+      "title": "Asking for Directions",
+      "difficulty": "beginner",
+      "dialogue": [
+        {"speaker": "tourist", "spanish": "Perdón, ¿dónde está la estación de tren?", "english": "Excuse me, where is the train station?"},
+        {"speaker": "local", "spanish": "Está muy cerca. Siga recto.", "english": "It's very close. Go straight."},
+        {"speaker": "tourist", "spanish": "¿Cuánto tiempo tarda?", "english": "How long does it take?"},
+        {"speaker": "local", "spanish": "Cinco minutos a pie.", "english": "Five minutes on foot."},
+        {"speaker": "tourist", "spanish": "¿Giro a la izquierda o derecha?", "english": "Do I turn left or right?"},
+        {"speaker": "local", "spanish": "A la izquierda, después del semáforo.", "english": "To the left, after the traffic light."},
+        {"speaker": "tourist", "spanish": "Muchas gracias por su ayuda.", "english": "Thank you very much for your help."},
+        {"speaker": "local", "spanish": "De nada. ¡Buen viaje!", "english": "You're welcome. Have a good trip!"}
+      ],
+      "vocabulary": ["estación", "cerca", "recto", "izquierda", "derecha", "semáforo", "minutos"],
+      "tips": "Key direction words: recto (straight), izquierda (left), derecha (right), cerca (near), lejos (far)."
+    }
+  ]
+}
+

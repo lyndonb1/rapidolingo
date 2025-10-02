@@ -1,0 +1,140 @@
+{
+  "exam_prep": {
+    "common_oral_exam_questions": [
+      {
+        "question_spanish": "¿Cómo te llamas?",
+        "question_english": "What's your name?",
+        "sample_answer_spanish": "Me llamo María y tengo dieciséis años.",
+        "sample_answer_english": "My name is María and I'm sixteen years old.",
+        "tips": "Always add extra information to show language skills."
+      },
+      {
+        "question_spanish": "¿Dónde vives?",
+        "question_english": "Where do you live?",
+        "sample_answer_spanish": "Vivo en Nueva York con mi familia.",
+        "sample_answer_english": "I live in New York with my family.",
+        "tips": "Mention ciudad (city) or país (country) for extra detail."
+      },
+      {
+        "question_spanish": "¿Qué te gusta hacer en tu tiempo libre?",
+        "question_english": "What do you like to do in your free time?",
+        "sample_answer_spanish": "Me gusta leer libros y jugar fútbol con mis amigos.",
+        "sample_answer_english": "I like to read books and play soccer with my friends.",
+        "tips": "Use 'me gusta' for singular activities, 'me gustan' for plural."
+      },
+      {
+        "question_spanish": "¿Cuál es tu comida favorita?",
+        "question_english": "What's your favorite food?",
+        "sample_answer_spanish": "Mi comida favorita es la pizza porque es deliciosa.",
+        "sample_answer_english": "My favorite food is pizza because it's delicious.",
+        "tips": "Always give a reason using 'porque' (because)."
+      },
+      {
+        "question_spanish": "¿Tienes hermanos?",
+        "question_english": "Do you have siblings?",
+        "sample_answer_spanish": "Sí, tengo un hermano mayor y una hermana menor.",
+        "sample_answer_english": "Yes, I have an older brother and a younger sister.",
+        "tips": "Mayor = older, menor = younger. Hermano = brother, hermana = sister."
+      },
+      {
+        "question_spanish": "¿Qué estudias?",
+        "question_english": "What do you study?",
+        "sample_answer_spanish": "Estudio matemáticas, ciencias e historia. Mi clase favorita es matemáticas.",
+        "sample_answer_english": "I study math, science and history. My favorite class is math.",
+        "tips": "List multiple subjects to show vocabulary range."
+      },
+      {
+        "question_spanish": "¿Adónde fuiste de vacaciones?",
+        "question_english": "Where did you go on vacation?",
+        "sample_answer_spanish": "Fui a México el verano pasado. Fue muy divertido.",
+        "sample_answer_english": "I went to Mexico last summer. It was very fun.",
+        "tips": "Use past tense: fui (I went), fue (it was)."
+      },
+      {
+        "question_spanish": "¿Qué quieres hacer en el futuro?",
+        "question_english": "What do you want to do in the future?",
+        "sample_answer_spanish": "Quiero ser médico y ayudar a las personas.",
+        "sample_answer_english": "I want to be a doctor and help people.",
+        "tips": "Use 'quiero ser' (I want to be) + profession."
+      }
+    ],
+    "exam_strategies": [
+      {
+        "strategy": "Add details to every answer",
+        "explanation": "Never give one-word answers. Always expand with porque (because), y (and), pero (but).",
+        "example": "Instead of 'Me gusta el fútbol', say 'Me gusta el fútbol porque es emocionante y juego con mis amigos'."
+      },
+      {
+        "strategy": "Use time expressions",
+        "explanation": "Show you know different tenses by using time words.",
+        "vocabulary": ["ayer (yesterday)", "hoy (today)", "mañana (tomorrow)", "el año pasado (last year)", "en el futuro (in the future)"]
+      },
+      {
+        "strategy": "Ask questions back",
+        "explanation": "If appropriate, ask the examiner a question to show conversational skills.",
+        "example": "After answering, you can say '¿Y usted?' (And you?)"
+      },
+      {
+        "strategy": "Use linking words",
+        "explanation": "Connect your ideas smoothly.",
+        "vocabulary": ["y (and)", "pero (but)", "porque (because)", "también (also)", "sin embargo (however)", "además (furthermore)"]
+      },
+      {
+        "strategy": "Don't panic if you don't understand",
+        "explanation": "It's OK to ask for clarification.",
+        "phrases": ["¿Puede repetir? (Can you repeat?)", "No entiendo (I don't understand)", "¿Qué significa...? (What does... mean?)"]
+      }
+    ],
+    "quick_verb_conjugations": {
+      "present_tense_examples": [
+        {"verb": "hablar (to speak)", "yo": "hablo", "tú": "hablas", "él/ella": "habla"},
+        {"verb": "comer (to eat)", "yo": "como", "tú": "comes", "él/ella": "come"},
+        {"verb": "vivir (to live)", "yo": "vivo", "tú": "vives", "él/ella": "vive"},
+        {"verb": "ser (to be)", "yo": "soy", "tú": "eres", "él/ella": "es"},
+        {"verb": "estar (to be)", "yo": "estoy", "tú": "estás", "él/ella": "está"},
+        {"verb": "tener (to have)", "yo": "tengo", "tú": "tienes", "él/ella": "tiene"},
+        {"verb": "ir (to go)", "yo": "voy", "tú": "vas", "él/ella": "va"},
+        {"verb": "hacer (to do/make)", "yo": "hago", "tú": "haces", "él/ella": "hace"}
+      ]
+    },
+    "pronunciation_tips_for_exams": [
+      {
+        "tip": "Roll your R's",
+        "explanation": "Practice words like 'perro' (dog) and 'carro' (car). The double R is rolled.",
+        "practice_words": ["perro", "carro", "correcto", "ferrocarril"]
+      },
+      {
+        "tip": "Pronounce every vowel",
+        "explanation": "Unlike English, every vowel is pronounced clearly in Spanish.",
+        "example": "'estudiante' = es-too-dee-AHN-teh (all vowels clear)"
+      },
+      {
+        "tip": "H is always silent",
+        "explanation": "Words starting with H are pronounced without the H sound.",
+        "examples": ["hola (OH-lah)", "hacer (ah-SEHR)", "hermano (ehr-MAH-noh)"]
+      },
+      {
+        "tip": "J sounds like English H",
+        "explanation": "The letter J is pronounced like a strong H in English.",
+        "examples": ["jugar (hoo-GAR)", "hijo (EE-hoh)", "trabajo (trah-BAH-hoh)"]
+      }
+    ],
+    "study_schedule_suggestions": {
+      "daily_practice": "15-20 minutes daily is better than 2 hours once a week",
+      "before_exam": {
+        "1_week_before": "Practice common questions daily. Record yourself speaking.",
+        "3_days_before": "Focus on pronunciation. Speak slowly and clearly.",
+        "1_day_before": "Review your notes. Get good sleep. Don't cram!",
+        "exam_day": "Relax. Speak confidently. It's OK to make small mistakes."
+      },
+      "practice_tips": [
+        "Practice with SpeedSpeak daily for instant feedback",
+        "Talk to yourself in Spanish while doing daily activities",
+        "Watch Spanish YouTube videos with subtitles",
+        "Label objects around your room with Spanish names",
+        "Join a Spanish conversation group or language exchange"
+      ]
+    }
+  }
+}
+
