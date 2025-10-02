@@ -9,6 +9,13 @@ from pathlib import Path
 from livekit.agents import Agent, function_tool
 from livekit.plugins import openai, silero, cartesia
 
+# Import configuration first
+try:
+    import config
+except ImportError:
+    # Fallback if config.py not found
+    pass
+
 # Load Spanish content once
 CONTEXT_DIR = Path("../context")
 
@@ -23,9 +30,15 @@ def load_context():
 
 SPANISH_CONTENT = load_context()
 
-# Base configuration
+# Base configuration - get from environment (set by config.py)
 CEREBRAS_API_KEY = os.getenv("CEREBRAS_API_KEY")
 CARTESIA_API_KEY = os.getenv("CARTESIA_API_KEY")
+
+# Validate API keys
+if not CEREBRAS_API_KEY:
+    raise ValueError("CEREBRAS_API_KEY not found in environment. Make sure config.py is imported.")
+if not CARTESIA_API_KEY:
+    raise ValueError("CARTESIA_API_KEY not found in environment. Make sure config.py is imported.")
 
 os.environ["OPENAI_API_KEY"] = CEREBRAS_API_KEY  # For LiveKit OpenAI plugin
 
