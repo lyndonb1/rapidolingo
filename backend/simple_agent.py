@@ -10,11 +10,7 @@ from typing import Annotated
 
 from livekit import agents, rtc
 from livekit.agents import JobContext, WorkerOptions, cli, tokenize, tts
-from livekit.agents.llm import (
-    ChatContext,
-    ChatImage,
-    ChatMessage,
-)
+from livekit.agents.llm import ChatContext
 from livekit.agents.voice_assistant import VoiceAssistant
 from livekit.plugins import openai, silero, cartesia as cartesia_plugin
 

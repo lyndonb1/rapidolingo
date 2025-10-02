@@ -15,7 +15,7 @@ start "Backend API" cmd /k "python main.py"
 timeout /t 3 >nul
 
 echo [2/3] Starting LiveKit Agent Worker...
-start "LiveKit Agent" cmd /k "python simple_agent.py dev"
+start "LiveKit Agent" cmd /k "python voice_agent.py dev"
 timeout /t 3 >nul
 
 echo [3/3] Starting Frontend...
