@@ -38,8 +38,9 @@ export default function Dashboard() {
 
   const fetchLessons = async () => {
     try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/lessons`
+        `${apiUrl}/api/lessons`
       );
       setLessons(response.data);
     } catch (error) {

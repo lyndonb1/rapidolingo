@@ -23,17 +23,33 @@ function TutoringContent() {
   const startSession = async () => {
     try {
       setLoading(true);
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/session/start`,
-        {
-          lesson_id: lessonId,
-          user_level: "beginner"
-        }
-      );
-      setSessionData(response.data);
+      
+      // Generate token using local Next.js API endpoint
+      const roomName = `rapidolingo_${lessonId}_${Date.now()}`;
+      const identity = `student_${Math.random().toString(36).substring(7)}`;
+      
+      console.log("Generating token locally...");
+      console.log("  Room:", roomName);
+      console.log("  Identity:", identity);
+      
+      const response = await axios.post('/api/token', {
+        room: roomName,
+        identity: identity
+      });
+      
+      console.log("Token generated successfully!");
+      console.log("  LiveKit URL:", response.data.livekit_url);
+      console.log("  Token length:", response.data.token.length);
+      
+      setSessionData({
+        session_id: response.data.session_id,
+        livekit_token: response.data.token,
+        livekit_url: response.data.livekit_url,
+        agent_name: response.data.agent_name
+      });
     } catch (err: any) {
       console.error("Failed to start session:", err);
-      setError(err.response?.data?.detail || "Failed to start session");
+      setError(err.response?.data?.error || err.message || "Failed to start session");
     } finally {
       setLoading(false);
     }
@@ -88,6 +104,13 @@ function TutoringContent() {
         connect={true}
         audio={true}
         video={false}
+        onError={(error) => {
+          console.error("LiveKit Room Error:", error);
+          setError(error.message);
+        }}
+        onConnected={() => {
+          console.log("✓ Connected to LiveKit room - audio should be active");
+        }}
         className="flex flex-col items-center justify-center min-h-screen"
       >
         <div className="max-w-2xl w-full px-6">
