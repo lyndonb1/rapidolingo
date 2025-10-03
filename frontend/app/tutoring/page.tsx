@@ -3,16 +3,17 @@
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
-import { LiveKitRoom, RoomAudioRenderer, useVoiceAssistant } from "@livekit/components-react";
+ import { LiveKitRoom, RoomAudioRenderer, useVoiceAssistant } from "@livekit/components-react";
 
 function TutoringContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const lessonId = searchParams.get("lesson");
-  
+
   const [sessionData, setSessionData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [transcript, setTranscript] = useState<{user: string[], ai: string[]}>({user: [], ai: []});
 
   useEffect(() => {
     if (lessonId) {
@@ -24,11 +25,12 @@ function TutoringContent() {
     try {
       setLoading(true);
       
-      // Generate token using local Next.js API endpoint
+      // Generate token using local Next.js API endpoint (WORKING VERSION)
       const roomName = `rapidolingo_${lessonId}_${Date.now()}`;
       const identity = `student_${Math.random().toString(36).substring(7)}`;
       
       console.log("Generating token locally...");
+      console.log("  Lesson:", lessonId);
       console.log("  Room:", roomName);
       console.log("  Identity:", identity);
       
@@ -41,11 +43,21 @@ function TutoringContent() {
       console.log("  LiveKit URL:", response.data.livekit_url);
       console.log("  Token length:", response.data.token.length);
       
+      // Map lesson to agent name
+      const agentNames: {[key: string]: string} = {
+        restaurant: "María (Restaurant Server)",
+        airport: "Carlos (Airport Agent)",
+        hotel: "Sofia (Hotel Agent)",
+        directions: "Miguel (Directions Guide)",
+        social: "Ana (Social Friend)",
+        teacher: "Profesora López (Teacher)"
+      };
+      
       setSessionData({
         session_id: response.data.session_id,
         livekit_token: response.data.token,
         livekit_url: response.data.livekit_url,
-        agent_name: response.data.agent_name
+        agent_name: agentNames[lessonId || 'restaurant'] || "Teacher"
       });
     } catch (err: any) {
       console.error("Failed to start session:", err);
@@ -97,27 +109,29 @@ function TutoringContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <LiveKitRoom
-        token={sessionData.livekit_token}
-        serverUrl={sessionData.livekit_url}
-        connect={true}
-        audio={true}
-        video={false}
-        onError={(error) => {
-          console.error("LiveKit Room Error:", error);
-          setError(error.message);
-        }}
-        onConnected={() => {
-          console.log("✓ Connected to LiveKit room - audio should be active");
-        }}
-        className="flex flex-col items-center justify-center min-h-screen"
-      >
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex">
+      {/* Main session area */}
+      <div className="flex-1">
+        <LiveKitRoom
+          token={sessionData.livekit_token}
+          serverUrl={sessionData.livekit_url}
+          connect={true}
+          audio={true}
+          video={false}
+          onError={(error) => {
+            console.error("LiveKit Room Error:", error);
+            setError(error.message);
+          }}
+          onConnected={() => {
+            console.log("✓ Connected to LiveKit room - audio should be active");
+          }}
+          className="flex flex-col items-center justify-center min-h-screen"
+        >
         <div className="max-w-2xl w-full px-6">
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-white mb-2">
-              {sessionData.agent_name}
+              {sessionData?.agent_name || "Loading..."}
             </h1>
             <p className="text-gray-400">Speak naturally - your tutor is listening</p>
           </div>
@@ -177,13 +191,43 @@ function TutoringContent() {
         <RoomAudioRenderer />
         <VoiceAssistantComponent />
       </LiveKitRoom>
+      </div>
+
+      {/* Transcript section */}
+      <div className="w-96 bg-gray-800 p-6 overflow-y-auto">
+        <h3 className="text-white text-lg font-semibold mb-4">Conversation Transcript</h3>
+
+        <div className="space-y-4">
+          {/* User's speech */}
+          <div>
+            <div className="text-sm text-gray-400 mb-1">You:</div>
+            {transcript.user.map((text, index) => (
+              <div key={index} className="text-white bg-blue-600 p-2 rounded mb-2">
+                {text}
+              </div>
+            ))}
+          </div>
+
+          {/* AI's responses */}
+          <div>
+            <div className="text-sm text-gray-400 mb-1">
+              {sessionData?.agent_name || "AI Tutor"}:
+            </div>
+            {transcript.ai.map((text, index) => (
+              <div key={index} className="text-white bg-green-600 p-2 rounded mb-2">
+                {text}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 function VoiceAssistantComponent() {
   const { state, audioTrack } = useVoiceAssistant();
-  
+
   useEffect(() => {
     console.log("Voice Assistant State:", state);
   }, [state]);

@@ -20,8 +20,12 @@ load_dotenv()
 # Import configuration (sets environment variables)
 try:
     import config
-except ImportError:
-    pass  # config.py not required if .env is used
+    print("[✓] Config loaded successfully")
+    print(f"[✓] LIVEKIT_URL: {os.getenv('LIVEKIT_URL')}")
+    print(f"[✓] LIVEKIT_API_KEY: {os.getenv('LIVEKIT_API_KEY')}")
+except ImportError as e:
+    print(f"[!] Config not found: {e}")
+    print("[!] Will use environment variables")
 
 app = FastAPI(
     title="RápidoLingo API",
@@ -82,8 +86,12 @@ def generate_livekit_token(room_name: str, participant_identity: str) -> Optiona
     api_key = os.getenv("LIVEKIT_API_KEY")
     api_secret = os.getenv("LIVEKIT_API_SECRET")
     
+    print(f"[DEBUG] Generating token with key: {api_key}")
+    print(f"[DEBUG] Room: {room_name}, Participant: {participant_identity}")
+    
     # For MVP without LiveKit credentials, return mock token
     if not api_key or not api_secret:
+        print("[WARNING] Missing LiveKit credentials - returning mock token")
         return "mock_token_for_mvp"
     
     try:
@@ -96,9 +104,13 @@ def generate_livekit_token(room_name: str, participant_identity: str) -> Optiona
                 can_publish=True,
                 can_subscribe=True,
             ))
-        return token.to_jwt()
+        jwt_token = token.to_jwt()
+        print(f"[✓] Token generated successfully: {jwt_token[:50]}...")
+        return jwt_token
     except Exception as e:
         print(f"[ERROR] Failed to generate LiveKit token: {e}")
+        import traceback
+        traceback.print_exc()
         return None
 
 # Routes
@@ -227,6 +239,12 @@ async def start_session(request: SessionRequest):
         raise HTTPException(status_code=500, detail="Failed to generate session token")
     
     livekit_url = os.getenv("LIVEKIT_URL", "ws://localhost:7880")
+    
+    print(f"[✓] Session created:")
+    print(f"    - Session ID: {session_id}")
+    print(f"    - Room: {room_name}")
+    print(f"    - LiveKit URL: {livekit_url}")
+    print(f"    - Agent: {agent_name}")
     
     return {
         "session_id": session_id,
