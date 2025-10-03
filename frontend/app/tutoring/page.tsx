@@ -49,6 +49,10 @@ function TutoringContent() {
         airport: "Carlos (Airport Agent)",
         hotel: "Sofia (Hotel Agent)",
         directions: "Miguel (Directions Guide)",
+        shopping: "Ana (Shopping Assistant)",
+        social_meetup: "Ana (Social Friend)",
+        social_party: "Ana (Social Friend)",
+        exam_prep: "Profesora López (Teacher)",
         social: "Ana (Social Friend)",
         teacher: "Profesora López (Teacher)"
       };

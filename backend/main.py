@@ -165,7 +165,7 @@ async def get_lessons():
             "title": "Shopping",
             "description": "Ask for sizes, colors, prices, and make purchases",
             "difficulty": "intermediate",
-            "agent_type": "directions",
+            "agent_type": "social",
             "category": "daily_life"
         },
         {
