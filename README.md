@@ -4,10 +4,12 @@
 
 A commercial-grade AI Spanish tutoring web application with real-time voice conversations powered by Cerebras ultra-fast inference.
 
-![Status](https://img.shields.io/badge/status-MVP_Complete-success)
+![Status](https://img.shields.io/badge/status-Voice_Agents_Working-success)
 ![Cerebras](https://img.shields.io/badge/Cerebras-LLaMA_3.3_70B-orange)
 ![LiveKit](https://img.shields.io/badge/LiveKit-WebRTC-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
+
+> **📌 Current Status (Oct 3, 2025):** Voice agents fully functional! María and all 6 tutors speaking successfully. Stable on commit `0375f97`.
 
 ---
 
@@ -224,13 +226,14 @@ rapidolingo/
 7. **End Session** - Return to dashboard, track progress
 
 ### **What Works Right Now** ✅
-- ✅ Full authentication flow
-- ✅ User onboarding & profile
-- ✅ Dashboard with lessons
-- ✅ LiveKit room creation
-- ✅ Token generation
-- ✅ Voice UI interface
-- ⏳ Voice agents (ready to deploy)
+- ✅ Full authentication flow (Clerk)
+- ✅ User onboarding & profile (3-step flow)
+- ✅ Dashboard with 8 lesson cards
+- ✅ LiveKit room creation & token generation
+- ✅ Voice UI interface with visualizer
+- ✅ **Voice agents fully functional** (María speaks!)
+- ✅ All 6 specialized agents working (Restaurant, Airport, Hotel, Directions, Social, Teacher)
+- ⏳ Real-time conversation transcript (planned feature)
 
 ---
 

@@ -98,22 +98,37 @@ class RestaurantAgent(Agent):
         1. Ask a question in English first
         2. Provide the Spanish translation
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish:
+           - Check grammar (verb conjugation, gender agreement, word order)
+           - Check vocabulary (correct words, appropriate formality)
+           - Note any missing or extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Your grammar and pronunciation were perfect!"
+           - If GOOD with minor issues: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain the mistake]. The correct phrase is [correct Spanish]. Try again!"
+           - Always offer alternative phrasings: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        EXAMPLES:
-        - English: "What would you like to order?"
-        - Spanish: "¿Qué te gustaría ordenar?"
-        - Correct response: "¡Perfecto! ¿Qué te gustaría ordenar?"
-        - Wrong response: "Casi, la respuesta correcta es '¿Qué te gustaría ordenar?' Inténtalo de nuevo."
+        EXAMPLE EVALUATIONS:
+        User says: "Me gustaría un café por favor"
+        → "¡Perfecto! You said 'I would like a coffee please.' Your grammar was excellent!"
+        
+        User says: "Me gustaría café"
+        → "Good! You said 'I would like coffee' but you forgot the article 'un' (a). Say 'Me gustaría un café.' Try again!"
+        
+        User says: "Quiero café por favor"
+        → "¡Bien! That works! You said 'I want coffee please.' A more polite way is 'Me gustaría un café, por favor.'"
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -127,6 +142,7 @@ class RestaurantAgent(Agent):
         config = AGENT_CONFIGS["restaurant"]
         logger.info(f"RestaurantAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
@@ -140,16 +156,24 @@ class AirportAgent(Agent):
         1. Ask a question in English first (e.g., "Do you need help with your luggage?")
         2. Provide the Spanish translation (e.g., "¿Necesitas ayuda con tu equipaje?")
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish: grammar, vocabulary, word order, missing/extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Perfect grammar!"
+           - If GOOD: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain mistake]. The correct phrase is [correct Spanish]."
+           - Offer alternatives: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -163,6 +187,7 @@ class AirportAgent(Agent):
         config = AGENT_CONFIGS["airport"]
         logger.info(f"AirportAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
@@ -176,16 +201,24 @@ class HotelAgent(Agent):
         1. Ask a question in English first (e.g., "How many nights would you like to stay?")
         2. Provide the Spanish translation (e.g., "¿Cuántas noches te gustaría quedarte?")
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish: grammar, vocabulary, word order, missing/extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Perfect grammar!"
+           - If GOOD: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain mistake]. The correct phrase is [correct Spanish]."
+           - Offer alternatives: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -199,6 +232,7 @@ class HotelAgent(Agent):
         config = AGENT_CONFIGS["hotel"]
         logger.info(f"HotelAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
@@ -212,16 +246,24 @@ class DirectionsAgent(Agent):
         1. Ask a question in English first (e.g., "Where would you like to go?")
         2. Provide the Spanish translation (e.g., "¿Adónde te gustaría ir?")
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish: grammar, vocabulary, word order, missing/extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Perfect grammar!"
+           - If GOOD: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain mistake]. The correct phrase is [correct Spanish]."
+           - Offer alternatives: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -235,6 +277,7 @@ class DirectionsAgent(Agent):
         config = AGENT_CONFIGS["directions"]
         logger.info(f"DirectionsAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
@@ -248,16 +291,24 @@ class SocialAgent(Agent):
         1. Ask a question in English first (e.g., "How are you today?")
         2. Provide the Spanish translation (e.g., "¿Cómo estás hoy?")
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish: grammar, vocabulary, word order, missing/extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Perfect grammar!"
+           - If GOOD: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain mistake]. The correct phrase is [correct Spanish]."
+           - Offer alternatives: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -271,6 +322,7 @@ class SocialAgent(Agent):
         config = AGENT_CONFIGS["social"]
         logger.info(f"SocialAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
@@ -284,16 +336,24 @@ class TeacherAgent(Agent):
         1. Ask a question in English first (e.g., "What did you learn today?")
         2. Provide the Spanish translation (e.g., "¿Qué aprendiste hoy?")
         3. Ask them to respond in Spanish
-        4. If correct: Give positive reinforcement like "¡Excelente!" or "¡Muy bien!"
-        5. If wrong: Gently correct them with "Casi, la respuesta correcta es..." and provide the right phrasing
-        6. Continue with next question or related follow-up
+        4. LISTEN and UNDERSTAND their Spanish response
+        5. EVALUATE their Spanish: grammar, vocabulary, word order, missing/extra words
+        6. PROVIDE SPECIFIC FEEDBACK:
+           - If PERFECT: "¡Excelente! You said [English translation]. Perfect grammar!"
+           - If GOOD: "¡Muy bien! You said [translation]. Small tip: [specific correction]"
+           - If NEEDS WORK: "Good try! You said [what they said], but [explain mistake]. The correct phrase is [correct Spanish]."
+           - Offer alternatives: "You could also say [alternative]"
+        7. Continue with next question or related follow-up
 
-        Keep responses SHORT - 1-2 sentences max. Be encouraging and patient.
+        Keep responses SHORT - 2-3 sentences max. Be encouraging and patient. Speak naturally.
         All text that you return will be spoken aloud, so don't use bullets, slashes, or non-pronounceable punctuation.
         """
 
         llm = openai.LLM.with_cerebras(model="llama-3.3-70b")
-        stt = deepgram.STT()
+        stt = deepgram.STT(
+            model="nova-3-general",
+            language="multi",  # Enable multilingual detection for English + Spanish
+        )
         tts = cartesia.TTS(voice=config["voice"])
         vad = silero.VAD.load()
 
@@ -307,12 +367,15 @@ class TeacherAgent(Agent):
         config = AGENT_CONFIGS["teacher"]
         logger.info(f"TeacherAgent on_enter called for {config['name']}")
         print(f"Current Agent: {config['emoji']} {config['name']} ({config['scenario']}) {config['emoji']}")
+        # Trigger the LLM to generate initial greeting
         self.session.generate_reply(user_input=config["initial_prompt"])
 
 
 async def entrypoint(ctx: JobContext):
-    """Main entry point - matches Cerebras example"""
-    await ctx.connect()
+    """Main entry point - handles one lesson session"""
+    import asyncio
+    
+    await ctx.connect(auto_subscribe=AutoSubscribe.AUDIO_ONLY)
 
     # Parse lesson from room name (e.g., "rapidolingo_restaurant_abc123" -> "restaurant")
     room_name = ctx.room.name
@@ -340,8 +403,26 @@ async def entrypoint(ctx: JobContext):
     agent = AgentClass()
     logger.info(f"Agent instance created: {agent.__class__.__name__}")
 
+    logger.info(f"Starting session for {lesson_id}...")
+    
+    # Create session
     session = AgentSession()
+    
+    # Start session (this returns immediately, doesn't block)
     await session.start(room=ctx.room, agent=agent)
+    
+    # Wait until the room is empty (all participants left)
+    # This keeps the job alive until the session truly ends
+    while True:
+        # Check if there are any participants left
+        participants = [p for p in ctx.room.remote_participants.values()]
+        if len(participants) == 0:
+            logger.info("All participants left, ending session")
+            break
+        # Wait a bit before checking again
+        await asyncio.sleep(0.5)
+    
+    logger.info(f"Session ended for {lesson_id}, job complete")
 
 
 if __name__ == "__main__":

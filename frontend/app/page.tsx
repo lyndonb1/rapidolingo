@@ -10,18 +10,6 @@ export default function Home() {
           <span className="text-3xl font-bold text-red-600">RápidoLingo</span>
         </div>
         <div className="flex items-center space-x-4">
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="px-4 py-2 text-gray-700 hover:text-red-600 transition">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
-                Get Started
-              </button>
-            </SignUpButton>
-          </SignedOut>
           <SignedIn>
             <Link href="/dashboard">
               <button className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
@@ -75,7 +63,7 @@ export default function Home() {
               <div className="text-gray-600">Specialized Tutors</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">$7.99</div>
+              <div className="text-4xl font-bold text-red-600 mb-2">TBD</div>
               <div className="text-gray-600">Per Month</div>
             </div>
           </div>

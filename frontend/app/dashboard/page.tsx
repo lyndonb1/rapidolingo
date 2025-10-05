@@ -128,33 +128,47 @@ export default function Dashboard() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Available Lessons</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {lessons.map((lesson) => (
-              <div
-                key={lesson.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <span className="text-3xl">{getCategoryIcon(lesson.category)}</span>
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(
-                      lesson.difficulty
-                    )}`}
-                  >
-                    {lesson.difficulty}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {lesson.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">{lesson.description}</p>
-                <button
-                  onClick={() => startLesson(lesson.id)}
-                  className="w-full py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition"
+            {lessons.map((lesson) => {
+              const isEnabled = lesson.id === "restaurant";
+              return (
+                <div
+                  key={lesson.id}
+                  className={`bg-white rounded-xl shadow-sm border p-6 transition ${
+                    isEnabled
+                      ? "border-gray-200 hover:shadow-lg"
+                      : "border-gray-100 opacity-50 cursor-not-allowed"
+                  }`}
                 >
-                  Start Lesson
-                </button>
-              </div>
-            ))}
+                  <div className="flex justify-between items-start mb-3">
+                    <span className="text-3xl">{getCategoryIcon(lesson.category)}</span>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(
+                        lesson.difficulty
+                      )}`}
+                    >
+                      {lesson.difficulty}
+                    </span>
+                  </div>
+                  <h3 className={`text-xl font-bold mb-2 ${isEnabled ? "text-gray-900" : "text-gray-400"}`}>
+                    {lesson.title}
+                  </h3>
+                  <p className={`text-sm mb-4 ${isEnabled ? "text-gray-600" : "text-gray-400"}`}>
+                    {lesson.description}
+                  </p>
+                  <button
+                    onClick={() => isEnabled && startLesson(lesson.id)}
+                    disabled={!isEnabled}
+                    className={`w-full py-3 font-semibold rounded-lg transition ${
+                      isEnabled
+                        ? "bg-red-600 text-white hover:bg-red-700"
+                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
+                  >
+                    {isEnabled ? "Start Lesson" : "Coming Soon"}
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
 
